@@ -1,9 +1,9 @@
 package net.jp.rirazou.sqlbuilder;
 
-import org.junit.Test;
-
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 public class SQLUtilsTest {
 
@@ -15,7 +15,7 @@ public class SQLUtilsTest {
 
     @Test
     public void testCreateColumnWithAlias() throws Exception {
-        AbstractColumn column = SQLUtils.column("col1").as("c1");
+        AbstractColumn column = (AbstractColumn) SQLUtils.column("col1").as("c1");
         assertThat(column.getName(), is("col1"));
         assertThat(column.getAlias(), is("c1"));
     }
