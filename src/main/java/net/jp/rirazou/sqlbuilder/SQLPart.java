@@ -1,16 +1,12 @@
 package net.jp.rirazou.sqlbuilder;
 
 /**
- * SQLの構成要素が持つべきインターフェース。
+ * Created on 2014/06/28.
  *
- * Created by rirazou on 2014/06/21.
+ * @author Hiroaki Suzuki
  */
-interface SQLPart {
+public interface SQLPart {
 
-    /**
-     * この要素のSQL文字列をsqlに書き込む。
-     *
-     * @param sql 書き込むSQL
-     */
-    void writeTo(StringBuilder sql);
+    @Override
+    String toString();
 }

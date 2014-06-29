@@ -1,9 +1,9 @@
 package net.jp.rirazou.sqlbuilder;
 
 /**
- * SQLの列が持つインターフェース。
+ * Created on 2014/06/28.
  *
- * @author rirazou
+ * @author Hiroaki Suzuki
  */
 public interface Column extends SQLPart {
 
