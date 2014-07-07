@@ -1,7 +1,5 @@
 package net.jp.rirazou.sqlbuilder.impl;
 
-import static net.jp.rirazou.sqlbuilder.impl.SQLConst.BACKQUOTE;
-
 /**
  * SQLのユーティリティクラス。
  * <p/>
@@ -10,12 +8,12 @@ import static net.jp.rirazou.sqlbuilder.impl.SQLConst.BACKQUOTE;
 class SQLUtils {
 
     static void encloseWithBackquote(StringBuilder sb, String str) {
-        sb.append(BACKQUOTE);
+        sb.append("`");
         sb.append(str);
-        sb.append(BACKQUOTE);
+        sb.append("`");
     }
 
-    static boolean isBrank(String str) {
+    static boolean isBlank(String str) {
         int len;
         if (str == null || (len = str.length()) == 0) {
             return true;
@@ -28,7 +26,7 @@ class SQLUtils {
         return true;
     }
 
-    static boolean isNotBrank(String str) {
-        return !isBrank(str);
+    static boolean isNotBlank(String str) {
+        return !isBlank(str);
     }
 }

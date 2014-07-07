@@ -1,13 +1,11 @@
 package net.jp.rirazou.sqlbuilder.impl;
 
-import static net.jp.rirazou.sqlbuilder.impl.SQLConst.DOT;
-
 /**
  * Created on 2014/06/28.
  *
  * @author Hiroaki Suzuki
  */
-class TableColumn extends AbstractColumn {
+class TableColumn extends SimpleColumn {
 
     private String tableName;
 
@@ -18,10 +16,10 @@ class TableColumn extends AbstractColumn {
 
     @Override
     public void writeTo(StringBuilder sql) {
-        if (SQLUtils.isNotBrank(tableName)) {
+        if (SQLUtils.isNotBlank(tableName)) {
             SQLUtils.encloseWithBackquote(sql, tableName);
-            sql.append(DOT);
+            sql.append(".");
         }
-        SQLUtils.encloseWithBackquote(sql, getName());
+        super.writeTo(sql);
     }
 }
