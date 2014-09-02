@@ -6,7 +6,7 @@ package net.jp.rirazou.sqlbuilder;
  * @author Hiroaki Suzuki
  */
 public interface SQL {
-
+    // test
     SQL select();
 
     SQL from();
